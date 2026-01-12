@@ -1,0 +1,6 @@
+[submodule ".github"]
+	path = .github
+	url = git@github.com:bamboo-filing-cabinet/.github.git
+[submodule "vietnam-elections"]
+	path = vietnam-elections
+	url = git@github.com:bamboo-filing-cabinet/vietnam-elections.git
