@@ -57,3 +57,46 @@ Notes: This is not legal advice. It's a working outline to help decide how BFC s
 ### Step 3 (partial): Add licensing defaults to docs site
 - Added Apache-2.0 `LICENSE` to `bamboo-filing-cabinet.github.io/`.
 - Updated `bamboo-filing-cabinet.github.io/docs/standards/licensing-guide.md` to reflect BFC defaults (code: Apache-2.0, data: CC-BY, docs: CC-BY) and required per-dataset metadata.
+
+## Plan: Vietnam Elections licensing work
+1. Audit current licensing mentions in `vietnam-elections/` (README, docs, data notes).
+2. Add Apache-2.0 `LICENSE` to `vietnam-elections/`.
+3. Add a licensing section to `vietnam-elections/README.md` (code license, data license, attribution template, source-terms caveat).
+4. Decide dataset license label (CC-BY vs UNKNOWN) based on source-term clarity; document per-dataset notes if needed.
+5. Summarize changes and update this log with findings.
+
+## Vietnam Elections audit (Step 1)
+- No explicit licensing section in `vietnam-elections/README.md`.
+- No `LICENSE` file in `vietnam-elections/`.
+- Mentions of “terms” exist in app nav/routes, but no dataset licensing guidance found.
+- `package-lock.json` contains third-party dependency licenses only.
+
+### Step 2-3: Apply licensing defaults to Vietnam Elections
+- Added Apache-2.0 `LICENSE` to `vietnam-elections/`.
+- Added a Licensing section to `vietnam-elections/README.md` covering code, compiled outputs (CC-BY 4.0), source ownership caveat, and attribution format.
+
+## Site licensing placement investigation
+- Site has dedicated policy pages: `app/terms/page.tsx`, `app/privacy/page.tsx`, `app/disclaimer/page.tsx`.
+- Footer/nav already links to `/terms`, `/privacy`, `/disclaimer` (via `app/layout.tsx` and `app/mobile-nav.tsx`).
+- `app/terms/page.tsx` currently states usage rules but does not mention code/data licenses.
+
+## Proposed plan (site licensing)
+1. Add a “Licensing” section to `app/terms/page.tsx` with concise bullets:
+   - Code: Apache-2.0 (link to repo LICENSE).
+   - Compiled dataset outputs: CC-BY 4.0 (attribution template).
+   - Underlying sources: third-party, terms may be unclear.
+2. Keep it short and consistent with the existing Terms tone.
+3. Optional: add a short sentence in the footer (or `/sources`) linking to the Terms licensing section if you want more visibility.
+
+## Status
+- Added a Licensing section to `vietnam-elections/app/terms/page.tsx` with code/data/source bullets and a suggested attribution line.
+
+## Open items / next goals
+- Add a `LICENSE` at the monorepo root (Apache-2.0). (done)
+- Add a CC-BY notice for docs/content in the docs site (e.g., `bamboo-filing-cabinet.github.io/docs/README.md`).
+- Perform a source-terms audit for Vietnam Elections (per-source licensing notes where possible).
+- Create a dataset card/template (license, sources, retrieval dates, transforms) and apply it to Vietnam Elections.
+- Optional: add a footer or `/sources` link pointing to the site licensing section for visibility.
+
+## Updates
+- Added Apache-2.0 `LICENSE` at monorepo root.
