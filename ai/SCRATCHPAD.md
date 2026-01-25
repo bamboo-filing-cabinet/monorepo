@@ -95,8 +95,29 @@ Notes: This is not legal advice. It's a working outline to help decide how BFC s
 - Add a `LICENSE` at the monorepo root (Apache-2.0). (done)
 - Add a CC-BY notice for docs/content in the docs site (e.g., `bamboo-filing-cabinet.github.io/docs/README.md`).
 - Perform a source-terms audit for Vietnam Elections (per-source licensing notes where possible).
-- Create a dataset card/template (license, sources, retrieval dates, transforms) and apply it to Vietnam Elections.
+- Create a dataset card/template (license, sources, retrieval dates, transforms) and apply it to Vietnam Elections (YAML-only).
 - Optional: add a footer or `/sources` link pointing to the site licensing section for visibility.
 
 ## Updates
 - Added Apache-2.0 `LICENSE` at monorepo root.
+- Added license templates under `bamboo-filing-cabinet.github.io/docs/standards/licenses/` (Apache-2.0 + CC-BY 4.0) and linked them from the licensing guide.
+- Decision: dataset cards will be YAML-only (single source of truth), no generated Markdown.
+- Added YAML dataset template in `bamboo-filing-cabinet.github.io/docs/standards/dataset-card-template.yml`.
+- Added NA15-2021 dataset card at `vietnam-elections/data/na15-2021/dataset.yml`.
+
+## Source-terms audit (Vietnam Elections: NA15-2021)
+Status: no explicit license/terms recorded in repo for the sources below; treat as UNKNOWN until verified.
+
+### Sources listed in `data/na15-2021/README.md`
+- `https://images.hcmcpv.org.vn/Uploads/File/280420219523F244/Danhsachbaucu-PYFO.pdf` (candidates list PDF; fetched 2026-01-02) — terms unknown.
+- `https://images.hcmcpv.org.vn/Uploads/File/280420219523F244/Danhsachbaucu-PYFO.pdf` (congressional units PDF; fetched 2026-01-02; same URL as above) — terms unknown.
+- `https://baochinhphu.vn/danh-sach-868-nguoi-ung-cu-dbqh-khoa-xv-102291334.htm` (DOCX list source; fetched 2026-01-02) — terms unknown.
+- `https://web.archive.org/web/20250221194402/http://www.cema.gov.vn/bau-cu-QH-HDND/cong-bo-danh-sach-499-nguoi-trung-cu-dai-bieu-quoc-hoi-khoa-xv.htm` (results bulletin; fetched 2026-01-09) — terms unknown.
+
+### Sources listed in `data/na15-2021/results/research.json`
+- CEMA bulletin (same as above) — terms unknown.
+- `https://web.archive.org/web/20210621105212/https://vtv.vn/chinh-tri/khong-xac-nhan-tu-cach-dai-bieu-quoc-hoi-voi-bi-thu-tinh-uy-binh-duong-20210610192156321.htm` (VTV article) — terms unknown.
+
+### Gaps / follow-ups
+- Check each source site for explicit licensing or terms of use (Vietnamese: “Bản quyền”, “Điều khoản”, “Sử dụng”).
+- Record any terms in a per-dataset notes file or dataset card; otherwise keep dataset license UNKNOWN for raw sources.
