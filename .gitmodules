@@ -7,3 +7,6 @@
 [submodule "bamboo-filing-cabinet.github.io"]
 	path = bamboo-filing-cabinet.github.io
 	url = git@github.com:bamboo-filing-cabinet/bamboo-filing-cabinet.github.io.git
+[submodule "vietnam-elections-wikidata"]
+	path = vietnam-elections-wikidata
+	url = git@github.com:bamboo-filing-cabinet/vietnam-elections-wikidata.git
