@@ -6,6 +6,7 @@ This repository is a monorepo that tracks projects as Git submodules.
 
 - `.github/` is a shared workflows repo (submodule) used across Bamboo Filing Cabinet.
 - `vietnam-elections/` is an application repo (submodule) with its own source, data, and docs.
+- `scripts/` holds root-level maintenance helpers (for example, `sync-all-submodules.sh`).
 - Top-level files (`README.md`, `.gitmodules`) describe the monorepo and submodule wiring.
 
 For module-specific contributor details, read each module’s `AGENTS.md` (for example: `vietnam-elections/AGENTS.md`).
@@ -15,6 +16,7 @@ For module-specific contributor details, read each module’s `AGENTS.md` (for e
 The root has no build artifacts; run commands inside the relevant submodule.
 
 - `git submodule update --init --recursive`: fetch all submodules after cloning.
+- `./scripts/sync-all-submodules.sh`: fast-forward the workspace and every submodule to the latest commits (add `--commit`/`--push` to record pointer bumps).
 - `cd vietnam-elections && npm install`: install dependencies for the Vietnam Elections site.
 - `cd vietnam-elections && npm run dev`: start the Next.js dev server.
 - `cd vietnam-elections && npm run build`: produce the static export.

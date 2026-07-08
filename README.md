@@ -12,6 +12,14 @@ If you already cloned without submodules:
 
 `git submodule update --init --recursive`
 
+## Keeping in sync
+
+To fast-forward the workspace **and** every submodule to the latest published commits (not just fetch):
+
+`./scripts/sync-all-submodules.sh`
+
+Add `--commit` to commit the resulting submodule pointer bumps, or `--push` to commit and push. Run `./scripts/sync-all-submodules.sh --help` for details.
+
 ## Development
 
 Work inside the relevant submodule and follow its `AGENTS.md` for commands and conventions.
