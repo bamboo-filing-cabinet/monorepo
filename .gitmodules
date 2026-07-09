@@ -10,3 +10,6 @@
 [submodule "vietnam-elections-wikidata"]
 	path = vietnam-elections-wikidata
 	url = git@github.com:bamboo-filing-cabinet/vietnam-elections-wikidata.git
+[submodule "vietnam-elections-archive"]
+	path = vietnam-elections-archive
+	url = git@github.com:bamboo-filing-cabinet/vietnam-elections-archive.git
