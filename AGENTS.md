@@ -43,3 +43,7 @@ The root has no build artifacts; run commands inside the relevant submodule.
 
 - Do not commit secrets or local credentials at the monorepo root.
 - Store environment files inside the appropriate submodule (for example, `vietnam-elections/.env.local`).
+
+## GitHub CLI Notes
+
+- In Codex sandboxed commands, `gh` may fail with `HTTP 401` even when it is authenticated in the user's normal terminal. If that happens, rerun the same `gh` command outside the sandbox with escalation; do not assume the user needs to re-authenticate.
