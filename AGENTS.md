@@ -10,7 +10,7 @@ Submodules:
 - `bamboo-filing-cabinet.github.io/` — the organization's website.
 - `vietnam-elections/` — application repo: a static, source-linked directory of official Vietnam election candidates (source, data, docs).
 - `vietnam-elections-wikidata/` — Wikidata reconciliation & enrichment for National Assembly delegates and electoral units (`mappings/`, `reference/`, and decision `docs/journals/`).
-- `vietnam-elections-archive/` — **private** submodule: raw archived source material (HTML profiles, candidate photos) from Vietnamese election portals. See its `daibieunhandan/` for the validated unit↔candidate index.
+- `vietnam-elections-archive/` — raw archived source material (HTML profiles, candidate photos, editorial articles) from Vietnamese election portals; candidate photos are served via GitHub Pages. See its `daibieunhandan/` for the validated unit↔candidate index.
 
 Other top-level paths:
 
@@ -60,4 +60,4 @@ The root has no build artifacts; run commands inside the relevant submodule.
 
 - These repos are owned by the maintainer's **personal** GitHub account, not a work/org account. Local git in this workspace is already configured to authenticate (over SSH) as that personal account, so submodule clone/fetch/push work here without extra setup.
 - Multiple `gh` accounts may be logged in (see `gh auth status`). The default active account is **not** necessarily the one that owns these repos. For `gh` **write** operations (creating/editing/closing issues and PRs), switch the active account to the personal one first (`gh auth switch`), then restore the previously-active account when done — a mismatched account can silently lack write access.
-- `vietnam-elections-archive` is a **private** submodule (personal account only); the others are public. If `git submodule update` reports "Repository not found" for it, that's an identity/access mismatch, not a missing repo — check which account your git/SSH is authenticating as.
+- All submodules are public. (Personal-account auth still matters for **pushes**, so commits land under the right identity.)
