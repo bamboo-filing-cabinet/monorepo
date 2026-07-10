@@ -47,3 +47,9 @@ The root has no build artifacts; run commands inside the relevant submodule.
 ## GitHub CLI Notes
 
 - In Codex sandboxed commands, `gh` may fail with `HTTP 401` even when it is authenticated in the user's normal terminal. If that happens, rerun the same `gh` command outside the sandbox with escalation; do not assume the user needs to re-authenticate.
+
+## GitHub Accounts & Submodule Access
+
+- These repos are owned by the maintainer's **personal** GitHub account, not a work/org account. Local git in this workspace is already configured to authenticate (over SSH) as that personal account, so submodule clone/fetch/push work here without extra setup.
+- Multiple `gh` accounts may be logged in (see `gh auth status`). The default active account is **not** necessarily the one that owns these repos. For `gh` **write** operations (creating/editing/closing issues and PRs), switch the active account to the personal one first (`gh auth switch`), then restore the previously-active account when done — a mismatched account can silently lack write access.
+- `vietnam-elections-archive` is a **private** submodule (personal account only); the others are public. If `git submodule update` reports "Repository not found" for it, that's an identity/access mismatch, not a missing repo — check which account your git/SSH is authenticating as.
