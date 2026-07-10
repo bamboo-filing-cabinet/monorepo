@@ -4,8 +4,16 @@
 
 This repository is a monorepo that tracks projects as Git submodules.
 
-- `.github/` is a shared workflows repo (submodule) used across Bamboo Filing Cabinet.
-- `vietnam-elections/` is an application repo (submodule) with its own source, data, and docs.
+Submodules:
+
+- `.github/` — shared workflows repo used across Bamboo Filing Cabinet.
+- `bamboo-filing-cabinet.github.io/` — the organization's website.
+- `vietnam-elections/` — application repo: a static, source-linked directory of official Vietnam election candidates (source, data, docs).
+- `vietnam-elections-wikidata/` — Wikidata reconciliation & enrichment for National Assembly delegates and electoral units (`mappings/`, `reference/`, and decision `docs/journals/`).
+- `vietnam-elections-archive/` — **private** submodule: raw archived source material (HTML profiles, candidate photos) from Vietnamese election portals. See its `daibieunhandan/` for the validated unit↔candidate index.
+
+Other top-level paths:
+
 - `scripts/` holds root-level maintenance helpers (for example, `sync-all-submodules.sh`).
 - Top-level files (`README.md`, `.gitmodules`) describe the monorepo and submodule wiring.
 
