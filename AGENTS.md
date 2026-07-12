@@ -4,8 +4,16 @@
 
 This repository is a monorepo that tracks projects as Git submodules.
 
-- `.github/` is a shared workflows repo (submodule) used across Bamboo Filing Cabinet.
-- `vietnam-elections/` is an application repo (submodule) with its own source, data, and docs.
+Submodules:
+
+- `.github/` — shared workflows repo used across Bamboo Filing Cabinet.
+- `bamboo-filing-cabinet.github.io/` — the organization's website.
+- `vietnam-elections/` — application repo: a static, source-linked directory of official Vietnam election candidates (source, data, docs).
+- `vietnam-elections-wikidata/` — Wikidata reconciliation & enrichment for National Assembly delegates and electoral units (`mappings/`, `reference/`, and decision `docs/journals/`).
+- `vietnam-elections-archive/` — raw archived source material (HTML profiles, candidate photos, editorial articles) from Vietnamese election portals; candidate photos are served via GitHub Pages. See its `daibieunhandan/` for the validated unit↔candidate index.
+
+Other top-level paths:
+
 - `scripts/` holds root-level maintenance helpers (for example, `sync-all-submodules.sh`).
 - Top-level files (`README.md`, `.gitmodules`) describe the monorepo and submodule wiring.
 
@@ -47,3 +55,9 @@ The root has no build artifacts; run commands inside the relevant submodule.
 ## GitHub CLI Notes
 
 - In Codex sandboxed commands, `gh` may fail with `HTTP 401` even when it is authenticated in the user's normal terminal. If that happens, rerun the same `gh` command outside the sandbox with escalation; do not assume the user needs to re-authenticate.
+
+## GitHub Accounts & Submodule Access
+
+- These repos are owned by the maintainer's **personal** GitHub account, not a work/org account. Local git in this workspace is already configured to authenticate (over SSH) as that personal account, so submodule clone/fetch/push work here without extra setup.
+- Multiple `gh` accounts may be logged in (see `gh auth status`). The default active account is **not** necessarily the one that owns these repos. For `gh` **write** operations (creating/editing/closing issues and PRs), switch the active account to the personal one first (`gh auth switch`), then restore the previously-active account when done — a mismatched account can silently lack write access.
+- All submodules are public. (Personal-account auth still matters for **pushes**, so commits land under the right identity.)
